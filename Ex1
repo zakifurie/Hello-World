@@ -1,0 +1,10 @@
+import pandas as pd
+from urllib.parse import urljoin
+
+base_url = (
+    "https://raw.githubusercontent.com/practical-jupyter/sample-data/master/anime/"
+)
+anime_csv = urljoin(base_url, "anime.csv")
+
+df = pd.read_csv(anime_csv)
+df.loc[df["episodes"] == "1"].head()
